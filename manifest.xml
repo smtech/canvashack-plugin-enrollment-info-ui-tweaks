@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <canvashack>
 	<name>Enrollment Info UI Tweaks</name>
+	<id>enrollment-info-ui-tweaks</id>
 	<abstract>Tweak some annoying default settings to better ones when looking at enrollment information</abstract>
 	<authors>
 		<author>
@@ -9,16 +10,23 @@
 		</author>
 	</authors>
 	<components>
-		<javascript path="enrollment-info-ui-tweaks.js" />
+		<javascript>enrollment-info-ui-tweaks.js</javascript>
 		<canvas>
 			<pages>
 				<include>
-					<page pattern="%courses/\d+/settings%" />
+					<page>
+						<type>regex</type>
+						<pattern>%courses/\d+/settings%</pattern>
+					</page>
 				</include>
 			</pages>
 			<dom>
-				<selector load="resizeSisId()">#course_sis_source_id</selector>
+				<bundle>
+					<event>load</event>
+					<action>resizeSisId()</action>
+					<selector>#course_sis_source_id</selector>
+				</bundle>
 			</dom>
-		</canvas>	
+		</canvas>
 	</components>
 </canvashack>
