@@ -16,7 +16,7 @@
 				<include>
 					<page>
 						<type>regex</type>
-						<pattern>%courses/\d+/settings%</pattern>
+						<pattern>%courses/\d+/settings$%</pattern>
 					</page>
 				</include>
 			</pages>
